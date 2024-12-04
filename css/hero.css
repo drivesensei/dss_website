@@ -1,0 +1,222 @@
+/* Hero Section Styles */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 5rem;
+    background: url('../images/herobg.jpg') center/cover no-repeat fixed;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.85),
+        rgba(15, 23, 42, 0.75)
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.hero-content h1 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-content p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out 0.3s backwards;
+}
+
+.airdrop-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    animation: fadeIn 1s ease-out 0.6s backwards;
+}
+
+.airdrop-message {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    background: linear-gradient(
+        270deg,
+        #FFD700,
+        #FFA500,
+        #FF4500,
+        #FFD700
+    );
+    background-size: 300% 300%;
+    animation: 
+        float 3s ease-in-out infinite,
+        gradientShift 8s linear infinite;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.airdrop-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #00f0ff;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(0, 240, 255, 0.3);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    clip-path: polygon(
+        0 0,
+        95% 0,
+        100% 20%,
+        100% 100%,
+        5% 100%,
+        0 80%
+    );
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    letter-spacing: 0.5px;
+}
+
+.airdrop-input::placeholder {
+    color: rgba(0, 240, 255, 0.5);
+}
+
+.airdrop-input:focus {
+    outline: none;
+    border-color: #00f0ff;
+    box-shadow: 
+        0 0 20px rgba(0, 240, 255, 0.2),
+        inset 0 0 10px rgba(0, 240, 255, 0.1);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.min-purchase-message {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating particles */
+.circle-container {
+    position: absolute;
+    transform: translateY(-10vh);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 1;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    background-image: radial-gradient(
+        hsl(180, 100%, 80%),
+        hsl(180, 100%, 80%) 10%,
+        hsla(180, 100%, 80%, 0) 56%
+    );
+    animation: fade-frames 200ms infinite, scale-frames 2s infinite;
+}
+
+@keyframes fade-frames {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+@keyframes scale-frames {
+    0% { transform: scale3d(0.4, 0.4, 1); }
+    50% { transform: scale3d(2.2, 2.2, 1); }
+    100% { transform: scale3d(0.4, 0.4, 1); }
+}
+
+.circle-container:nth-child(1) {
+    width: 4px;
+    height: 4px;
+    animation-name: move-frames-1;
+    animation-duration: 31729ms;
+    animation-delay: 29486ms;
+}
+
+@keyframes move-frames-1 {
+    from { transform: translate3d(73vw, 108vh, 0); }
+    to { transform: translate3d(10vw, -112vh, 0); }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .waitlist-button {
+        width: 100%;
+    }
+
+    .airdrop-message {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
+}

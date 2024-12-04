@@ -1,0 +1,194 @@
+/* Roadmap Section Styles */
+.roadmap {
+    position: relative;
+    background: url('../images/dss.webp') center/cover no-repeat fixed;
+    padding: 5rem 0;
+    color: white;
+    overflow: hidden;
+}
+
+.roadmap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.85)
+    );
+    z-index: 1;
+}
+
+.roadmap h2 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    z-index: 2;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        rgba(99, 102, 241, 0.3),
+        rgba(99, 102, 241, 0.8),
+        rgba(99, 102, 241, 0.3)
+    );
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+}
+
+.timeline-item {
+    padding: 2rem 0;
+    width: 50%;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: 3rem;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding-left: 3rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 
+        0 0 0 4px rgba(99, 102, 241, 0.3),
+        0 0 15px rgba(99, 102, 241, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -10px;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 0 20px rgba(99, 102, 241, 0.2),
+        inset 0 0 10px rgba(99, 102, 241, 0.1);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 8px 12px rgba(0, 0, 0, 0.15),
+        0 0 30px rgba(99, 102, 241, 0.3),
+        inset 0 0 15px rgba(99, 102, 241, 0.15);
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.timeline-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline-content li {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.timeline-content:hover li {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 
+            0 0 0 0 rgba(99, 102, 241, 0.4),
+            0 0 0 4px rgba(99, 102, 241, 0.3);
+    }
+    70% {
+        box-shadow: 
+            0 0 0 10px rgba(99, 102, 241, 0),
+            0 0 0 4px rgba(99, 102, 241, 0.3);
+    }
+    100% {
+        box-shadow: 
+            0 0 0 0 rgba(99, 102, 241, 0),
+            0 0 0 4px rgba(99, 102, 241, 0.3);
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 0;
+    }
+
+    .timeline-item:nth-child(odd) {
+        text-align: left;
+        padding-right: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 0;
+    }
+
+    .timeline-item::before {
+        left: 21px;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+        right: auto;
+        left: 21px;
+    }
+}

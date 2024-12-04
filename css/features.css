@@ -1,0 +1,158 @@
+/* Features Section Styles */
+.features {
+    position: relative;
+    background: url('../images/featuresbg.webp') center/cover no-repeat fixed;
+    padding: 5rem 2rem;
+    color: white;
+    overflow: hidden;
+}
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.85)
+    );
+    z-index: 1;
+}
+
+.features h2 {
+    position: relative;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.features-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.feature-card {
+    position: relative;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 0 20px rgba(99, 102, 241, 0.2),
+        inset 0 0 10px rgba(99, 102, 241, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 8px 12px rgba(0, 0, 0, 0.15),
+        0 0 30px rgba(99, 102, 241, 0.3),
+        inset 0 0 15px rgba(99, 102, 241, 0.15);
+}
+
+.feature-icon {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    background: rgba(99, 102, 241, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+}
+
+.feature-card:hover .feature-icon {
+    background: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+.feature-icon i {
+    --ggs: 1.5;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon i {
+    transform: scale(1.1);
+}
+
+.feature-card h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Circuit Animation */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/circuit-pattern.svg') center/150% 150%;
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+    animation: circuitMove 20s linear infinite;
+    pointer-events: none;
+}
+
+.feature-card:hover::before {
+    opacity: 0.15;
+}
+
+@keyframes circuitMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .features {
+        padding: 3rem 1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        min-height: 240px;
+    }
+}

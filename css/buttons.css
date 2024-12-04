@@ -1,0 +1,74 @@
+/* Cyberpunk Button Base Styles */
+.button {
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    clip-path: polygon(
+        0 0,
+        90% 0,
+        100% 30%,
+        100% 100%,
+        10% 100%,
+        0 70%
+    );
+    transition: all 0.3s ease;
+}
+
+/* Button Hover State */
+.button:hover {
+    transform: translateY(-2px);
+}
+
+/* Button Active State */
+.button:active {
+    transform: translateY(1px);
+}
+
+/* Primary Button Variant */
+.button-primary {
+    background: linear-gradient(135deg, #ff0080, #7928ca);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.button-primary:hover {
+    background: linear-gradient(135deg, #cc0066, #5f1f9e);
+}
+
+/* Waitlist Button Variant */
+.waitlist-button {
+    background: linear-gradient(135deg, #00f0ff, #00ff88);
+    color: #000;
+    font-weight: 700;
+    border: 2px solid rgba(0, 240, 255, 0.3);
+}
+
+.waitlist-button:hover {
+    background: linear-gradient(135deg, #00c0cc, #00cc6c);
+}
+
+/* CTA Button Variant */
+.cta-button {
+    background: linear-gradient(135deg, #ff2b4a, #ff9900);
+    border: 2px solid rgba(255, 43, 74, 0.3);
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #cc223b, #cc7a00);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .button {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
