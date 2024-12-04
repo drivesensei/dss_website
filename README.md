@@ -1,3 +1,3 @@
-# dss_website
+# Drivesensei Landing Page
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/drivesensei/dss_website)
+This is the landing repo page for the DriveSensei platform
