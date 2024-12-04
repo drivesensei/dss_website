@@ -1,0 +1,54 @@
+/* Footer Styles */
+.footer {
+    position: relative;
+    padding: 2rem 0;
+    text-align: center;
+    background: linear-gradient(45deg, #000000, #1a1a1a);
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ff00ff,
+        #00ffff,
+        #ff00ff,
+        transparent
+    );
+    animation: borderGlow 3s linear infinite;
+    background-size: 200% 100%;
+}
+
+.footer-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: transparent;
+    background: linear-gradient(
+        90deg,
+        #ff00ff,
+        #00ffff,
+        #ff00ff
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradientFlow 3s linear infinite;
+}
+
+@keyframes borderGlow {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 200% 50%; }
+    100% { background-position: -200% 50%; }
+}
