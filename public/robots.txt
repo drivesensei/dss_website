@@ -1,0 +1,34 @@
+User-agent: *
+Allow: /
+Sitemap: https://drivesensei.io/sitemap.xml
+
+# Allow all bots to crawl important sections
+Allow: /features
+Allow: /roadmap
+Allow: /token
+
+# Crawl delay to prevent server overload
+Crawl-delay: 10
+
+# Prevent access to admin or private areas if they exist in the future
+Disallow: /admin/
+Disallow: /private/
+Disallow: /internal/
+
+# Block specific file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Custom directives for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 5

@@ -12,7 +12,6 @@
 
 /* Intersection Observer Alternative using scroll-timeline (modern browsers) */
 @supports (animation-timeline: view()) {
-    /* Inner elements animations */
     .features-grid > *,
     .timeline-item,
     .token-features > *,
@@ -28,7 +27,6 @@
     }
 }
 
-/* Fallback for browsers that don't support scroll-timeline */
 @supports not (animation-timeline: view()) {
     /* Inner elements initial state */
     .features-grid > *,
@@ -64,12 +62,12 @@
     /* Section headings and content */
     .features h2,
     .roadmap h2,
-    .token h2 { 
-        animation: fadeInUp 1s ease forwards; 
+    .token h2 {
+        animation: fadeInUp 1s ease forwards;
     }
 
-    .token p { 
-        animation: fadeInUp 1s ease forwards 0.2s; 
+    .token p {
+        animation: fadeInUp 1s ease forwards 0.2s;
     }
 
     .dss-address {
@@ -87,7 +85,7 @@
         #FFD700
     );
     background-size: 300% 300%;
-    animation: 
+    animation:
         float 3s ease-in-out infinite,
         gradientShift 8s linear infinite;
 }

@@ -11,7 +11,7 @@
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
-    box-shadow: 
+    box-shadow:
         0 0 15px rgba(99, 102, 241, 0.2),
         inset 0 0 10px rgba(99, 102, 241, 0.1);
     width: 90%;
@@ -47,9 +47,9 @@
         overflow-anchor: none;
     }
 
-    /* .navbar {
+    .navbar {
         animation: showNavbar 0.3s ease forwards;
-    } */
+    }
 
     /* Using CSS scroll-driven animations */
     @supports (animation-timeline: scroll()) {
@@ -65,7 +65,7 @@
             opacity: 1;
             transform: translateX(-50%) translateY(0);
             animation-range: 0 300px;
-        } */
+        }
     }
 
     /* Fallback for browsers that don't support scroll-driven animations */
@@ -87,7 +87,7 @@
 .navbar:hover {
     background: rgba(15, 23, 42, 0.75);
     border-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 
+    box-shadow:
         0 0 20px rgba(99, 102, 241, 0.3),
         inset 0 0 15px rgba(99, 102, 241, 0.15);
 }
