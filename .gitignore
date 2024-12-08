@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 custom-build/clsm.json
+.bolt
